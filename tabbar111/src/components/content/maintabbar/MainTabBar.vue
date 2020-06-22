@@ -9,7 +9,7 @@
       <tab-bar-item path="/category">
         <img slot="tab-bar-icon" src="~assets/img/tabbar/home.svg" alt="">
         <img slot="tab-bar-active" src="~assets/img/tabbar/home_active.svg" alt="">
-        <div slot="tab-bar-text">首页333</div>
+        <div slot="tab-bar-text">首页8888</div>
       </tab-bar-item>
       <tab-bar-item path="/cart">
         <img slot="tab-bar-icon" src="~assets/img/tabbar/home.svg" alt="">
