@@ -1,12 +1,116 @@
 <template>
-  <div class="">
-    <h2>个人</h2>
-  </div>
+  <scroll class="content">
+    <ul>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+      <li>商品信息</li>
+    </ul>
+  </scroll>
 </template>
 
 <script>
+import Scroll from 'components/common/scroll/Scroll.vue'
 export default {
-  components:{},
+  components:{
+    Scroll
+  },
   data(){
     return {
     }
@@ -19,4 +123,9 @@ export default {
 }
 </script>
 <style scoped>
+  .content{
+    height: 300px;
+    background-color: red;
+    overflow: hidden;
+  }
 </style>

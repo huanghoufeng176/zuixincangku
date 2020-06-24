@@ -1,47 +1,14 @@
 <template>
   <div class="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div>></nav-bar>
-    <div class="wrapper">
-      <div class="content">
-        <home-swiper :banners="banners"></home-swiper>
-        <recommend-view :recommends="recommends"></recommend-view>
-        <feature-view></feature-view>
-        <tab-control :titles="['流行','新款','精选']" class="tab-control" @tabClick="tabClick"></tab-control>
-        <goods-list :goods="showGoods"></goods-list>
-      </div>
-    </div>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <scroll class="content" ref="scroll" :probe-type="3" @scroll="scrollContent">
+      <home-swiper :banners="banners"></home-swiper>
+      <recommend-view :recommends="recommends"></recommend-view>
+      <feature-view></feature-view>
+      <tab-control :titles="['流行','新款','精选']" class="tab-control" @tabClick="tabClick"></tab-control>
+      <goods-list :goods="showGoods"></goods-list>
+    </scroll>
+    <back-top @click.native="backClick" v-show="isShow"></back-top>
   </div>
 </template>
 
@@ -50,6 +17,8 @@
 import NavBar from 'components/common/navbar/NavBar.vue'
 import TabControl from 'components/content/tabControl/tabControl.vue'
 import GoodsList from 'components/content/goods/GoodsList.vue'
+import Scroll from 'components/common/scroll/Scroll.vue'
+import BackTop from 'components/content/backTop/BackTop.vue'
 
 import HomeSwiper from './childComps/HomeSwiper'
 import RecommendView from './childComps/RecommendView'
@@ -57,7 +26,7 @@ import FeatureView from './childComps/FeatureView'
 
 import {getHomeMultidata,getHomeGoods} from 'network/home.js'
 
-import BScroll from 'better-scroll'
+
 
 export default {
   components:{
@@ -66,10 +35,13 @@ export default {
     RecommendView,
     FeatureView,
     TabControl,
-    GoodsList
+    GoodsList,
+    Scroll,
+    BackTop
   },
   data(){
     return {
+      isShow:false,
       banners:[],
       recommends:[],
       goods: {
@@ -111,7 +83,13 @@ export default {
           break
       }
     },
+    backClick(){
+    this.$refs.scroll.scroll.scrollTo(0,0)
+    },
 
+    scrollContent(position){
+      this.isShow=(-position.y)>1000
+    },
     //网络请求相关的方法
     getHomeMultidata(){
       getHomeMultidata().then(res=>{
@@ -140,11 +118,17 @@ export default {
     z-index: 8;
   }
   .home{
-    padding-top: 44px;
+    /* padding-top: 44px; */
+    height: 100vh;
   }
   .tab-control{
     position: sticky;
     top: 44px;
     z-index: 8;
+  }
+  .content{
+    height: calc(100% - 93px);
+    overflow: hidden;
+    margin-top: 44px;
   }
 </style>
